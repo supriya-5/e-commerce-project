@@ -6,6 +6,7 @@ const addItems = (state = addItem, action) => {
             ...state,
             action.payload
         ]
+
         break;
 
         case "DELITEM" :
