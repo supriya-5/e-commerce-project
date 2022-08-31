@@ -1,9 +1,11 @@
-import React from 'react'
+import React  from 'react'
 import { useSelector } from 'react-redux'
 
 const Checkout = () => {
     const state = useSelector((state) => state.addItem)
+    
 
+   
     var total = 0;
     const itemList = (item) => {
         total = total + item.price;
@@ -12,10 +14,15 @@ const Checkout = () => {
                 <div>
                     <h6 className="my-0">{item.title}</h6>
                 </div>
-                <span className="text-muted">${item.price}</span>
+                <span className="text-muted">Rs.{item.price}</span>
             </li>
         );
     }
+
+   const complete = () =>{
+    alert("THANK YOU for your purchase....☺️");
+    }
+    
 
     return (
         <>
@@ -30,8 +37,8 @@ const Checkout = () => {
                             {state.map(itemList)}
 
                             <li className="list-group-item d-flex justify-content-between">
-                                <span>Total (USD)</span>
-                                <strong>${total}</strong>
+                                <span>Total (rupees)</span>
+                                <strong>Rs.{total}</strong>
                             </li>
                         </ul>
 
@@ -94,7 +101,7 @@ const Checkout = () => {
                                     <input type="text" className="form-control" id="address2" placeholder="Apartment or suite" />
                                 </div>
 
-                                <div className="col-md-5">
+                                {/* <div className="col-md-5">
                                     <label htmlFor="country" className="form-label">Country</label>
                                     <select className="form-select" id="country" required="">
                                         <option value="">Choose...</option>
@@ -103,14 +110,23 @@ const Checkout = () => {
                                     <div className="invalid-feedback">
                                         Please select a valid country.
                                     </div>
-                                </div>
+                                </div> */}
 
                                 <div className="col-md-4">
                                     <label htmlFor="state" className="form-label">State</label>
                                     <select className="form-select" id="state" required="">
                                         <option value="">Choose...</option>
-                                        <option>California</option>
-                                    </select>
+                                        <option>Andhra Pradesh</option>
+                                        <option>Arunachal Pradesh</option>
+                                        <option>Assam</option>
+                                        <option>Bihar</option>
+                                        <option>Chhattisgarh</option>
+                                        <option>Goa</option>
+                                        <option>Gujarat</option>
+                                        <option>Haryana</option>
+                                        <option>Himachal Pradesh</option>
+                                        <option>Jharkhand</option>
+             </select>
                                     <div className="invalid-feedback">
                                         Please provide a valid state.
                                     </div>
@@ -193,7 +209,7 @@ const Checkout = () => {
 
                             <hr className="my-4" />
 
-                            <button className="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                            <button className="w-100 btn btn-primary btn-lg" type="submit" onClick={complete}>Continue to checkout</button>
                         </form>
                     </div>
                 </div>
