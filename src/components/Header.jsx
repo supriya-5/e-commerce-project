@@ -30,7 +30,7 @@ const Header = () => {
                             
                             
                         </ul>
-                    <NavLink className="navbar-brand mx-auto fw-bold" to="/">BookShop</NavLink>
+                    <NavLink className="navbar-brand mx-auto fw-bold" to="/"><span><img src="https://64.media.tumblr.com/eb99fb267089a18d708c6f48f591cf18/tumblr_ppd964IV8n1t0g7nko1_1280.jpg" alt="logo" width="60px" height="55px" /></span>ookShop</NavLink>
                     <Login/>
                     <Signup/>
                     <CartBtn/>
